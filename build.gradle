@@ -11,4 +11,4 @@
 apply plugin: 'java'
 apply plugin: 'jacoco'
 
-// In t
+// In this section you declare where to find the dependencies of
