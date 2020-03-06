@@ -15,4 +15,9 @@ apply plugin: 'jacoco'
 repositories {
     // Use 'jcenter' for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
-    jcente
+    jcenter()
+}
+
+jacoco {
+    toolVersion = "0.8.1"
+    reportsDir = fi
