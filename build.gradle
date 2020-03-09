@@ -26,4 +26,5 @@ jacoco {
 jacocoTestReport {
     reports {
         xml.enabled false
-        cs
+        csv.enabled false
+        html.des
