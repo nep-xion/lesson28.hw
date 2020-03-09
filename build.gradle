@@ -24,3 +24,6 @@ jacoco {
 }
 
 jacocoTestReport {
+    reports {
+        xml.enabled false
+        cs
