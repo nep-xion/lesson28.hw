@@ -3,4 +3,6 @@
  * by 'sky' at '10/25/18 6:35 PM' with Gradle 3.1
  *
  * The settings file is used to specify which projects to include in your build.
- * In a single project build this file can be empty or even remo
+ * In a single project build this file can be empty or even removed.
+ *
+ * Detailed information about configurin
