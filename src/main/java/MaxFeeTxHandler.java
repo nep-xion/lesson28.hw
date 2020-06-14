@@ -133,3 +133,54 @@ public class MaxFeeTxHandler {
             }
         };
         Arrays.sort(txs, transactionComparator);
+
+        Set<UTXO> utxos = new HashSet<UTXO>();
+
+        for (int i = 0; i < txs.length; ++i) {
+            if (!containDuplicateUTXOs(utxos, txs[i])) {
+                transactions.add(txs[i]);
+                acceptTransaction(txs[i]);
+                insertUTXOs(utxos, txs[i]);
+            }
+        }
+
+        Transaction[] _transactions = new Transaction[transactions.size()];
+        for (int i = 0; i < transactions.size(); ++i) {
+            _transactions[i] = transactions.get(i);
+        }
+        return _transactions;
+    }
+
+    private void acceptTransaction(Transaction tx) {
+        tx.finalize();
+
+        // Remove used coins from UTXO
+        for (int i = 0; i < tx.numInputs(); ++i) {
+            Transaction.Input in = tx.getInput(i);
+            UTXO utxo = new UTXO(in.prevTxHash, in.outputIndex);
+            pool.removeUTXO(utxo);
+        }
+
+        // Add outputs to UTXOPool
+        for (int i = 0; i < tx.numOutputs(); ++i) {
+          Transaction.Output out = tx.getOutput(i);
+          UTXO utxo = new UTXO(tx.getHash(), i);
+          pool.addUTXO(utxo, out);
+        }
+    }
+
+    private double transactionFee(Transaction tx) {
+        double outputSum = 0;
+        double inputSum = 0;
+        for (int i = 0; i < tx.numOutputs(); ++i) {
+            Transaction.Output out = tx.getOutput(i);
+            outputSum += out.value;
+        }
+        for (int i = 0; i < tx.numInputs(); ++i) {
+            Transaction.Input in = tx.getInput(i);
+            UTXO utxo = new UTXO(in.prevTxHash, in.outputIndex);
+            Transaction.Output out = pool.getTxOutput(utxo);
+            inputSum += out.value;
+        }
+        return Math.max(inputSum - outputSum, 0);
+    }
