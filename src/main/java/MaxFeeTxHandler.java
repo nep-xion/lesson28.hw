@@ -84,3 +84,52 @@ public class MaxFeeTxHandler {
             inputSum += out.value;
         }
         if (inputSum < outputSum) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Handles each epoch by receiving an unordered array of proposed transactions, checking each
+     * transaction for correctness, returning a mutually valid array of accepted transactions, and
+     * updating the current UTXO pool as appropriate.
+     */
+    public Transaction[] handleTxs(Transaction[] possibleTxs) {
+        ArrayList<Transaction> transactions = new ArrayList<Transaction>();
+
+        // We use an approximation algorithm for multidimensional knapsack
+        // problem, assuming that the transactions are sparse (in a sense that
+        // it rarely uses the same UTXO twice for different transactions).
+
+        // So, we first sort the transactions in descending order and accept
+        // transactions that has non-conflicting UTXO only.
+
+        ArrayList<Transaction> _txs = new ArrayList<Transaction>();
+        // Filter non valid transactions
+        for (int i = 0; i < possibleTxs.length; ++i) {
+            if (isValidTx(possibleTxs[i])) {
+                _txs.add(possibleTxs[i]);
+            }
+        }
+        Transaction[] txs = new Transaction[_txs.size()];
+        for (int i = 0; i < _txs.size(); ++i) {
+            txs[i] = _txs.get(i);
+        }
+
+
+        Comparator<Transaction> transactionComparator = new Comparator<Transaction>() {
+            @Override
+            public int compare(Transaction t1, Transaction t2) {
+                double f1 = transactionFee(t1);
+                double f2 = transactionFee(t2);
+                if (f1 > f2) {
+                    return -1;
+                } else if (f1 < f2) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        };
+        Arrays.sort(txs, transactionComparator);
