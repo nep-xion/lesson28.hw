@@ -184,3 +184,23 @@ public class MaxFeeTxHandler {
         }
         return Math.max(inputSum - outputSum, 0);
     }
+
+    private static boolean containDuplicateUTXOs(Set<UTXO> utxos, Transaction tx) {
+        for (int i = 0; i < tx.numInputs(); ++i) {
+            Transaction.Input in = tx.getInput(i);
+            UTXO utxo = new UTXO(in.prevTxHash, in.outputIndex);
+            if (utxos.contains(utxo)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static void insertUTXOs(Set<UTXO> utxos, Transaction tx) {
+        for (int i = 0; i < tx.numInputs(); ++i) {
+            Transaction.Input in = tx.getInput(i);
+            UTXO utxo = new UTXO(in.prevTxHash, in.outputIndex);
+            utxos.add(utxo);
+        }
+    }
+}
