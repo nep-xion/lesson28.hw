@@ -111,3 +111,42 @@ public class Transaction {
             for (int i = 0; i < addressBytes.length; i++)
                 sigData.add(addressBytes[i]);
         }
+        byte[] sigD = new byte[sigData.size()];
+        int i = 0;
+        for (Byte sb : sigData)
+            sigD[i++] = sb;
+        return sigD;
+    }
+
+    public void addSignature(byte[] signature, int index) {
+        inputs.get(index).addSignature(signature);
+    }
+
+    public byte[] getRawTx() {
+        ArrayList<Byte> rawTx = new ArrayList<Byte>();
+        for (Input in : inputs) {
+            byte[] prevTxHash = in.prevTxHash;
+            ByteBuffer b = ByteBuffer.allocate(Integer.SIZE / 8);
+            b.putInt(in.outputIndex);
+            byte[] outputIndex = b.array();
+            byte[] signature = in.signature;
+            if (prevTxHash != null)
+                for (int i = 0; i < prevTxHash.length; i++)
+                    rawTx.add(prevTxHash[i]);
+            for (int i = 0; i < outputIndex.length; i++)
+                rawTx.add(outputIndex[i]);
+            if (signature != null)
+                for (int i = 0; i < signature.length; i++)
+                    rawTx.add(signature[i]);
+        }
+        for (Output op : outputs) {
+            ByteBuffer b = ByteBuffer.allocate(Double.SIZE / 8);
+            b.putDouble(op.value);
+            byte[] value = b.array();
+            byte[] addressBytes = op.address.getEncoded();
+            for (int i = 0; i < value.length; i++) {
+                rawTx.add(value[i]);
+            }
+            for (int i = 0; i < addressBytes.length; i++) {
+                rawTx.add(addressBytes[i]);
+            }
