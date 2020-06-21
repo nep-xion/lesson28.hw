@@ -71,3 +71,43 @@ public class Transaction {
     }
 
     public void removeInput(int index) {
+        inputs.remove(index);
+    }
+
+    public void removeInput(UTXO ut) {
+        for (int i = 0; i < inputs.size(); i++) {
+            Input in = inputs.get(i);
+            UTXO u = new UTXO(in.prevTxHash, in.outputIndex);
+            if (u.equals(ut)) {
+                inputs.remove(i);
+                return;
+            }
+        }
+    }
+
+    public byte[] getRawDataToSign(int index) {
+        // ith input and all outputs
+        ArrayList<Byte> sigData = new ArrayList<Byte>();
+        if (index > inputs.size())
+            return null;
+        Input in = inputs.get(index);
+        byte[] prevTxHash = in.prevTxHash;
+        ByteBuffer b = ByteBuffer.allocate(Integer.SIZE / 8);
+        b.putInt(in.outputIndex);
+        byte[] outputIndex = b.array();
+        if (prevTxHash != null)
+            for (int i = 0; i < prevTxHash.length; i++)
+                sigData.add(prevTxHash[i]);
+        for (int i = 0; i < outputIndex.length; i++)
+            sigData.add(outputIndex[i]);
+        for (Output op : outputs) {
+            ByteBuffer bo = ByteBuffer.allocate(Double.SIZE / 8);
+            bo.putDouble(op.value);
+            byte[] value = bo.array();
+            byte[] addressBytes = op.address.getEncoded();
+            for (int i = 0; i < value.length; i++)
+                sigData.add(value[i]);
+
+            for (int i = 0; i < addressBytes.length; i++)
+                sigData.add(addressBytes[i]);
+        }
