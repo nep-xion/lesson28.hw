@@ -150,3 +150,49 @@ public class Transaction {
             for (int i = 0; i < addressBytes.length; i++) {
                 rawTx.add(addressBytes[i]);
             }
+
+        }
+        byte[] tx = new byte[rawTx.size()];
+        int i = 0;
+        for (Byte b : rawTx)
+            tx[i++] = b;
+        return tx;
+    }
+
+    public void finalize() {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            md.update(getRawTx());
+            hash = md.digest();
+        } catch (NoSuchAlgorithmException x) {
+            x.printStackTrace(System.err);
+        }
+    }
+
+    public void setHash(byte[] h) {
+        hash = h;
+    }
+
+    public byte[] getHash() {
+        return hash;
+    }
+
+    public ArrayList<Input> getInputs() {
+        return inputs;
+    }
+
+    public ArrayList<Output> getOutputs() {
+        return outputs;
+    }
+
+    public Input getInput(int index) {
+        if (index < inputs.size()) {
+            return inputs.get(index);
+        }
+        return null;
+    }
+
+    public Output getOutput(int index) {
+        if (index < outputs.size()) {
+            return outputs.get(index);
+        }
