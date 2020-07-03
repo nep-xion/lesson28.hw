@@ -196,3 +196,14 @@ public class Transaction {
         if (index < outputs.size()) {
             return outputs.get(index);
         }
+        return null;
+    }
+
+    public int numInputs() {
+        return inputs.size();
+    }
+
+    public int numOutputs() {
+        return outputs.size();
+    }
+}
