@@ -6,3 +6,4 @@ public class TxHandler {
     private UTXOPool pool;
 
     /**
+     * Creates a public ledger whose current UTXOPool (collection
