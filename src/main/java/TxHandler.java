@@ -6,4 +6,5 @@ public class TxHandler {
     private UTXOPool pool;
 
     /**
-     * Creates a public ledger whose current UTXOPool (collection
+     * Creates a public ledger whose current UTXOPool (collection of unspent transaction outputs) is
+    
