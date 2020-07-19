@@ -7,4 +7,7 @@ public class TxHandler {
 
     /**
      * Creates a public ledger whose current UTXOPool (collection of unspent transaction outputs) is
-     * {@code utxoPool}. This should make a copy of utxoPool by using the UTXOPool(UTXOPoo
+     * {@code utxoPool}. This should make a copy of utxoPool by using the UTXOPool(UTXOPool uPool)
+     * constructor.
+     */
+    publi
