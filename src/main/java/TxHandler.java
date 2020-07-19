@@ -10,4 +10,5 @@ public class TxHandler {
      * {@code utxoPool}. This should make a copy of utxoPool by using the UTXOPool(UTXOPool uPool)
      * constructor.
      */
-    publi
+    public TxHandler(UTXOPool utxoPool) {
+     
