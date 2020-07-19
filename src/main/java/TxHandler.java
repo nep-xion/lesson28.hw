@@ -7,4 +7,4 @@ public class TxHandler {
 
     /**
      * Creates a public ledger whose current UTXOPool (collection of unspent transaction outputs) is
-    
+     * {@code utxoPool}. This should make a copy of u
