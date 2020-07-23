@@ -11,4 +11,7 @@ public class TxHandler {
      * constructor.
      */
     public TxHandler(UTXOPool utxoPool) {
-     
+        pool = new UTXOPool(utxoPool);
+    }
+
+    /
