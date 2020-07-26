@@ -14,4 +14,6 @@ public class TxHandler {
         pool = new UTXOPool(utxoPool);
     }
 
-    /
+    /**
+     * @return true if:
+     * (1) all outputs claime
