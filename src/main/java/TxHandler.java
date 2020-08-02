@@ -17,4 +17,4 @@ public class TxHandler {
     /**
      * @return true if:
      * (1) all outputs claimed by {@code tx} are in the current UTXO pool,
-     * 
+     * (2) the signatures on each input of {@code 
