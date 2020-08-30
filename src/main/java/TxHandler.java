@@ -23,4 +23,5 @@ public class TxHandler {
      * (5) the sum of {@code tx}s input values is greater than or equal to the sum of its output
      *     values; and false otherwise.
      */
-    public boolean isValid
+    public boolean isValidTx(Transaction tx) {
+        // Check if al
