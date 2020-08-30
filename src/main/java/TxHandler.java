@@ -24,4 +24,4 @@ public class TxHandler {
      *     values; and false otherwise.
      */
     public boolean isValidTx(Transaction tx) {
-        // Check if al
+        // Check if all outputs claimed by {@code tx} are in the curre
