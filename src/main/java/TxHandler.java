@@ -24,4 +24,5 @@ public class TxHandler {
      *     values; and false otherwise.
      */
     public boolean isValidTx(Transaction tx) {
-        // Check if all outputs claimed by {@code tx} are in the curre
+        // Check if all outputs claimed by {@code tx} are in the current UTXO pool
+        for (int i = 0; i
