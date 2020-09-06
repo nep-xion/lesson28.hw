@@ -26,4 +26,5 @@ public class TxHandler {
     public boolean isValidTx(Transaction tx) {
         // Check if all outputs claimed by {@code tx} are in the current UTXO pool
         for (int i = 0; i < tx.numInputs(); ++i) {
-            Transa
+            Transaction.Input in = tx.getInput(i);
+            UTXO
