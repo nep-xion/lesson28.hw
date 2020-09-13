@@ -27,4 +27,5 @@ public class TxHandler {
         // Check if all outputs claimed by {@code tx} are in the current UTXO pool
         for (int i = 0; i < tx.numInputs(); ++i) {
             Transaction.Input in = tx.getInput(i);
-            UTXO
+            UTXO utxo = new UTXO(in.prevTxHash, in.outputIndex);
+      
