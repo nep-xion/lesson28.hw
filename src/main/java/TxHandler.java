@@ -29,4 +29,8 @@ public class TxHandler {
             Transaction.Input in = tx.getInput(i);
             UTXO utxo = new UTXO(in.prevTxHash, in.outputIndex);
             if (!pool.contains(utxo)) {
-                r
+                return false;
+            }
+        }
+
+        // Check 
