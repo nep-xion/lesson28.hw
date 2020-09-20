@@ -33,4 +33,5 @@ public class TxHandler {
             }
         }
 
-        // Check 
+        // Check if the signatures on each input of {@code tx} are valid
+ 
