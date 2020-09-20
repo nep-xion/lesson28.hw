@@ -34,4 +34,4 @@ public class TxHandler {
         }
 
         // Check if the signatures on each input of {@code tx} are valid
- 
+        for (int i = 0; i < tx.numIn
