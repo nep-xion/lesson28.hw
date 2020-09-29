@@ -36,4 +36,5 @@ public class TxHandler {
         // Check if the signatures on each input of {@code tx} are valid
         for (int i = 0; i < tx.numInputs(); ++i) {
             byte[] data = tx.getRawDataToSign(i);
-            Transaction.Input
+            Transaction.Input in = tx.getInput(i);
+            if (in.signat
