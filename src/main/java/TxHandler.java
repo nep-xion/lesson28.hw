@@ -37,4 +37,6 @@ public class TxHandler {
         for (int i = 0; i < tx.numInputs(); ++i) {
             byte[] data = tx.getRawDataToSign(i);
             Transaction.Input in = tx.getInput(i);
-            if (in.signat
+            if (in.signature == null) {
+                return false;
+ 
