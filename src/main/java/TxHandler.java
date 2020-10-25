@@ -40,4 +40,5 @@ public class TxHandler {
             if (in.signature == null) {
                 return false;
             }
-            UTXO utxo = new UTXO(in.prevTxHa
+            UTXO utxo = new UTXO(in.prevTxHash, in.outputIndex);
+            Transa
