@@ -39,4 +39,5 @@ public class TxHandler {
             Transaction.Input in = tx.getInput(i);
             if (in.signature == null) {
                 return false;
- 
+            }
+            UTXO utxo = new UTXO(in.prevTxHa
