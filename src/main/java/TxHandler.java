@@ -41,4 +41,5 @@ public class TxHandler {
                 return false;
             }
             UTXO utxo = new UTXO(in.prevTxHash, in.outputIndex);
-            Transa
+            Transaction.Output out = pool.getTxOutput(utxo);
+  
