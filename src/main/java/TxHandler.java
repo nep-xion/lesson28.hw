@@ -42,4 +42,4 @@ public class TxHandler {
             }
             UTXO utxo = new UTXO(in.prevTxHash, in.outputIndex);
             Transaction.Output out = pool.getTxOutput(utxo);
-  
+            if (!Crypto.verifySignature(out.address, data
