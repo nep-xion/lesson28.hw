@@ -44,4 +44,7 @@ public class TxHandler {
             Transaction.Output out = pool.getTxOutput(utxo);
             if (!Crypto.verifySignature(out.address, data, in.signature)) {
                 return false;
-   
+            }
+        }
+
+        // No UTXO is claimed mu
