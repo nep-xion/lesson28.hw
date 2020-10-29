@@ -47,4 +47,5 @@ public class TxHandler {
             }
         }
 
-        // No UTXO is claimed mu
+        // No UTXO is claimed multiple times by {@code tx}
+        Set<Integer> hashC
