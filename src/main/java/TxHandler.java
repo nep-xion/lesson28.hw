@@ -48,4 +48,5 @@ public class TxHandler {
         }
 
         // No UTXO is claimed multiple times by {@code tx}
-        Set<Integer> hashC
+        Set<Integer> hashCodes = new HashSet<Integer>();
+        for (
