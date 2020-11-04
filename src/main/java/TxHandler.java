@@ -50,4 +50,5 @@ public class TxHandler {
         // No UTXO is claimed multiple times by {@code tx}
         Set<Integer> hashCodes = new HashSet<Integer>();
         for (int i = 0; i < tx.numInputs(); ++i) {
-            Transac
+            Transaction.Input in = tx.getInput(i);
+            UTXO utxo = n
