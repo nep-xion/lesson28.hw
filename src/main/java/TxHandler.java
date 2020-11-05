@@ -51,4 +51,5 @@ public class TxHandler {
         Set<Integer> hashCodes = new HashSet<Integer>();
         for (int i = 0; i < tx.numInputs(); ++i) {
             Transaction.Input in = tx.getInput(i);
-            UTXO utxo = n
+            UTXO utxo = new UTXO(in.prevTxHash, in.outputIndex);
+     
