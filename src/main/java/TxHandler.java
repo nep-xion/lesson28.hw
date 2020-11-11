@@ -55,4 +55,7 @@ public class TxHandler {
             if (hashCodes.contains(utxo.hashCode())) {
                 return false;
             }
-            hashCodes.add(utxo.hashCode())
+            hashCodes.add(utxo.hashCode());
+        }
+
+        // All of {@code tx}s outp
