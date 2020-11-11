@@ -58,4 +58,5 @@ public class TxHandler {
             hashCodes.add(utxo.hashCode());
         }
 
-        // All of {@code tx}s outp
+        // All of {@code tx}s output values are non-negative
+        for (int i = 0; i <
