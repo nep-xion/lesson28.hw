@@ -61,4 +61,6 @@ public class TxHandler {
         // All of {@code tx}s output values are non-negative
         for (int i = 0; i < tx.numOutputs(); i++) {
             Transaction.Output out = tx.getOutput(i);
-            if (out.value 
+            if (out.value < 0) {
+                return false;
+         
