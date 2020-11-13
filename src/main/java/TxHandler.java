@@ -63,4 +63,7 @@ public class TxHandler {
             Transaction.Output out = tx.getOutput(i);
             if (out.value < 0) {
                 return false;
-         
+            }
+        }
+
+        // the sum of {@code tx}s input valu
