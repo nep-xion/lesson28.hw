@@ -67,4 +67,5 @@ public class TxHandler {
         }
 
         // the sum of {@code tx}s input values is greater than or equal to the
-        // sum of
+        // sum of its output values; and false otherwise.
+        double
