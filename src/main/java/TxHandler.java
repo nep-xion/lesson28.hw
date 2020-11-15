@@ -70,4 +70,5 @@ public class TxHandler {
         // sum of its output values; and false otherwise.
         double outputSum = 0;
         double inputSum = 0;
-        f
+        for (int i = 0; i < tx.numOutputs(); ++i) {
+         
