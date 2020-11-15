@@ -71,4 +71,4 @@ public class TxHandler {
         double outputSum = 0;
         double inputSum = 0;
         for (int i = 0; i < tx.numOutputs(); ++i) {
-         
+            Transaction.Output out = tx.getOutpu
