@@ -75,4 +75,5 @@ public class TxHandler {
             outputSum += out.value;
         }
         for (int i = 0; i < tx.numInputs(); ++i) {
-            Transaction.Input in = 
+            Transaction.Input in = tx.getInput(i);
+            UTXO utxo = new UTX
