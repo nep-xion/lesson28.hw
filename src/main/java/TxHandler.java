@@ -86,3 +86,6 @@ public class TxHandler {
 
         return true;
     }
+
+    /**
+     * Handles each epoch by receiving 
