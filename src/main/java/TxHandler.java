@@ -78,4 +78,6 @@ public class TxHandler {
             Transaction.Input in = tx.getInput(i);
             UTXO utxo = new UTXO(in.prevTxHash, in.outputIndex);
             Transaction.Output out = pool.getTxOutput(utxo);
-  
+            inputSum += out.value;
+        }
+       
