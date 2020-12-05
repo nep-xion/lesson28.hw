@@ -80,4 +80,5 @@ public class TxHandler {
             Transaction.Output out = pool.getTxOutput(utxo);
             inputSum += out.value;
         }
-       
+        if (inputSum < outputSum) {
+            return f
