@@ -81,4 +81,8 @@ public class TxHandler {
             inputSum += out.value;
         }
         if (inputSum < outputSum) {
-            return f
+            return false;
+        }
+
+        return true;
+    }
