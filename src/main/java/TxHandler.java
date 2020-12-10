@@ -88,4 +88,4 @@ public class TxHandler {
     }
 
     /**
-     * Handles each epoch by receiving 
+     * Handles each epoch by receiving an unordered array of proposed trans
