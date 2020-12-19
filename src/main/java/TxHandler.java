@@ -89,4 +89,4 @@ public class TxHandler {
 
     /**
      * Handles each epoch by receiving an unordered array of proposed transactions, checking each
-     * transaction for correctness, re
+     * transaction for correctness, returning a mutually valid array of accepted transacti
