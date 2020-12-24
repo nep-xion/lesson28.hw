@@ -89,4 +89,5 @@ public class TxHandler {
 
     /**
      * Handles each epoch by receiving an unordered array of proposed transactions, checking each
-     * transaction for correctness, returning a mutually valid array of accepted transacti
+     * transaction for correctness, returning a mutually valid array of accepted transactions, and
+     * updating the current UTXO pool
