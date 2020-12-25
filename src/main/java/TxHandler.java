@@ -93,4 +93,6 @@ public class TxHandler {
      * updating the current UTXO pool as appropriate.
      */
     public Transaction[] handleTxs(Transaction[] possibleTxs) {
-        ArrayList<Transaction> transactions = new
+        ArrayList<Transaction> transactions = new ArrayList<Transaction>();
+
+        for
