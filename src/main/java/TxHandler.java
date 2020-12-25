@@ -92,4 +92,5 @@ public class TxHandler {
      * transaction for correctness, returning a mutually valid array of accepted transactions, and
      * updating the current UTXO pool as appropriate.
      */
-    public Transaction[] handleTxs(Transaction[] possibleTxs) 
+    public Transaction[] handleTxs(Transaction[] possibleTxs) {
+        ArrayList<Transaction> transactions = new
