@@ -96,3 +96,5 @@ public class TxHandler {
         ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 
         for (int i = 0; i < possibleTxs.length; ++i) {
+            if (isValidTx(possibleTxs[i])) {
+    
