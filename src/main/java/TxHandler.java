@@ -95,4 +95,4 @@ public class TxHandler {
     public Transaction[] handleTxs(Transaction[] possibleTxs) {
         ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 
-        for
+        for (int i = 0; i < possibleTxs.length; ++i) {
