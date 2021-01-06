@@ -102,4 +102,4 @@ public class TxHandler {
             }
         }
 
-        Transa
+        Transaction[] _transactions = new Transaction[tr
