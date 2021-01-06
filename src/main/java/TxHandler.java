@@ -98,4 +98,8 @@ public class TxHandler {
         for (int i = 0; i < possibleTxs.length; ++i) {
             if (isValidTx(possibleTxs[i])) {
                 transactions.add(possibleTxs[i]);
-                acceptTransaction(possibleTx
+                acceptTransaction(possibleTxs[i]);
+            }
+        }
+
+        Transa
