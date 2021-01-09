@@ -102,4 +102,5 @@ public class TxHandler {
             }
         }
 
-        Transaction[] _transactions = new Transaction[tr
+        Transaction[] _transactions = new Transaction[transactions.size()];
+        for (int i = 0; i < transacti
