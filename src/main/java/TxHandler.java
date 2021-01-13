@@ -104,4 +104,5 @@ public class TxHandler {
 
         Transaction[] _transactions = new Transaction[transactions.size()];
         for (int i = 0; i < transactions.size(); ++i) {
-          _transactions[i]
+          _transactions[i] = transactions.get(i);
+        
