@@ -109,4 +109,5 @@ public class TxHandler {
         return _transactions;
     }
 
-    private 
+    private void acceptTransaction(Transaction tx) {
+        tx
