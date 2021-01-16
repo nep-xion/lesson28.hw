@@ -110,4 +110,6 @@ public class TxHandler {
     }
 
     private void acceptTransaction(Transaction tx) {
-        tx
+        tx.finalize();
+
+        // Remove used coins from UTXO
