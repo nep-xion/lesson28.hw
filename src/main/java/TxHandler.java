@@ -113,3 +113,5 @@ public class TxHandler {
         tx.finalize();
 
         // Remove used coins from UTXO
+        for (int i = 0; i < tx.numInputs(); ++i) {
+      
