@@ -114,4 +114,4 @@ public class TxHandler {
 
         // Remove used coins from UTXO
         for (int i = 0; i < tx.numInputs(); ++i) {
-      
+            Transaction.Input in = tx.getInpu
