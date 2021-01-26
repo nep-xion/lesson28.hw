@@ -120,4 +120,5 @@ public class TxHandler {
         }
 
         // Add outputs to UTXOPool
-        for (in
+        for (int i = 0; i < tx.numOutputs(); ++i) {
+          Transa
