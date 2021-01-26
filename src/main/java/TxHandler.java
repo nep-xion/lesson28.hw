@@ -119,4 +119,5 @@ public class TxHandler {
             pool.removeUTXO(utxo);
         }
 
-       
+        // Add outputs to UTXOPool
+        for (in
