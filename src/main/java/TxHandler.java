@@ -122,4 +122,5 @@ public class TxHandler {
         // Add outputs to UTXOPool
         for (int i = 0; i < tx.numOutputs(); ++i) {
           Transaction.Output out = tx.getOutput(i);
-          UT
+          UTXO utxo = new UTXO(tx.getHash(), i);
+     
