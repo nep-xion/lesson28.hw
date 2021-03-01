@@ -6,4 +6,7 @@ public class UTXO implements Comparable<UTXO> {
     private byte[] txHash;
 
     /** Index of the corresponding output in said transaction */
-    private
+    private int index;
+
+    /**
+     * Creates a new UTXO cor
