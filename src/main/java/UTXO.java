@@ -9,4 +9,4 @@ public class UTXO implements Comparable<UTXO> {
     private int index;
 
     /**
-     * Creates a new UTXO cor
+     * Creates a new UTXO corresponding to the output with index <inde
