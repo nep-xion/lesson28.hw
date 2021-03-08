@@ -12,4 +12,5 @@ public class UTXO implements Comparable<UTXO> {
      * Creates a new UTXO corresponding to the output with index <index> in the transaction whose
      * hash is {@code txHash}
      */
-    public UTXO(b
+    public UTXO(byte[] txHash, int index) {
+        this.t
