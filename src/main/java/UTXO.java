@@ -9,4 +9,5 @@ public class UTXO implements Comparable<UTXO> {
     private int index;
 
     /**
-     * Creates a new UTXO corresponding to the output with index <inde
+     * Creates a new UTXO corresponding to the output with index <index> in the transaction whose
+     * hash is {@co
