@@ -17,4 +17,5 @@ public class UTXO implements Comparable<UTXO> {
         this.index = index;
     }
 
-    /** @re
+    /** @return the transaction hash of this UTXO */
+    public b
