@@ -14,4 +14,7 @@ public class UTXO implements Comparable<UTXO> {
      */
     public UTXO(byte[] txHash, int index) {
         this.txHash = Arrays.copyOf(txHash, txHash.length);
-    
+        this.index = index;
+    }
+
+    /** @re
