@@ -18,4 +18,5 @@ public class UTXO implements Comparable<UTXO> {
     }
 
     /** @return the transaction hash of this UTXO */
-    public b
+    public byte[] getTxHash() {
+        return
