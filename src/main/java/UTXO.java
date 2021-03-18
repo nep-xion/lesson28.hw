@@ -23,3 +23,5 @@ public class UTXO implements Comparable<UTXO> {
     }
 
     /** @return the index of this UTXO */
+    public int getIndex() {
+        return ind
