@@ -28,4 +28,5 @@ public class UTXO implements Comparable<UTXO> {
     }
 
     /**
-     * Compares this UTXO to the one specified by {@code other}, considering them equa
+     * Compares this UTXO to the one specified by {@code other}, considering them equal if they have
+     * {@code txHash} arrays w
