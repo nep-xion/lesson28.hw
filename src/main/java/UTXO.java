@@ -35,4 +35,6 @@ public class UTXO implements Comparable<UTXO> {
         if (other == null) {
             return false;
         }
-        if (getClass(
+        if (getClass() != other.getClass()) {
+            return false;
+  
