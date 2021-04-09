@@ -37,4 +37,7 @@ public class UTXO implements Comparable<UTXO> {
         }
         if (getClass() != other.getClass()) {
             return false;
-  
+        }
+
+        UTXO utxo = (UTXO) other;
+        byte
