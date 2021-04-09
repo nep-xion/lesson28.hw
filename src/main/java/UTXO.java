@@ -33,4 +33,6 @@ public class UTXO implements Comparable<UTXO> {
      */
     public boolean equals(Object other) {
         if (other == null) {
- 
+            return false;
+        }
+        if (getClass(
