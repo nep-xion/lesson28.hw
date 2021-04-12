@@ -41,4 +41,5 @@ public class UTXO implements Comparable<UTXO> {
 
         UTXO utxo = (UTXO) other;
         byte[] hash = utxo.txHash;
-        int in = utxo.
+        int in = utxo.index;
+        if (hash.length != txHash.length
