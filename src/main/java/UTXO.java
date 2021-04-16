@@ -45,3 +45,5 @@ public class UTXO implements Comparable<UTXO> {
         if (hash.length != txHash.length || index != in)
             return false;
         for (int i = 0; i < hash.length; i++) {
+            if (hash[i] != txHash[i])
+         
