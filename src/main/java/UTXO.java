@@ -50,3 +50,6 @@ public class UTXO implements Comparable<UTXO> {
         }
         return true;
     }
+
+    /**
+     * Simple implementation of a UTXO hashCode that 
