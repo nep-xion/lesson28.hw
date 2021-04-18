@@ -52,4 +52,5 @@ public class UTXO implements Comparable<UTXO> {
     }
 
     /**
-     * Simple implementation of a UTXO hashCode that 
+     * Simple implementation of a UTXO hashCode that respects equality of UTXOs // (i.e.
+     * utxo1.eq
