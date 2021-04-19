@@ -54,3 +54,6 @@ public class UTXO implements Comparable<UTXO> {
     /**
      * Simple implementation of a UTXO hashCode that respects equality of UTXOs // (i.e.
      * utxo1.equals(utxo2) => utxo1.hashCode() == utxo2.hashCode())
+     */
+    public int hashCode() {
+  
