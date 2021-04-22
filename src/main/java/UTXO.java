@@ -56,4 +56,5 @@ public class UTXO implements Comparable<UTXO> {
      * utxo1.equals(utxo2) => utxo1.hashCode() == utxo2.hashCode())
      */
     public int hashCode() {
-  
+        int hash = 1;
+        hash = hash * 17
