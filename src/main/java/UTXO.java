@@ -57,4 +57,5 @@ public class UTXO implements Comparable<UTXO> {
      */
     public int hashCode() {
         int hash = 1;
-        hash = hash * 17
+        hash = hash * 17 + index;
+        hash = hash * 31
