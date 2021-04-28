@@ -59,4 +59,7 @@ public class UTXO implements Comparable<UTXO> {
         int hash = 1;
         hash = hash * 17 + index;
         hash = hash * 31 + Arrays.hashCode(txHash);
-        retur
+        return hash;
+    }
+
+    /** Compares this
