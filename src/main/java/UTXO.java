@@ -63,4 +63,5 @@ public class UTXO implements Comparable<UTXO> {
     }
 
     /** Compares this UTXO to the one specified by {@code utxo} */
-    publ
+    public int compareTo(UTXO utxo) {
+        byt
