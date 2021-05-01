@@ -64,4 +64,5 @@ public class UTXO implements Comparable<UTXO> {
 
     /** Compares this UTXO to the one specified by {@code utxo} */
     public int compareTo(UTXO utxo) {
-        byt
+        byte[] hash = utxo.txHash;
+        int in = utxo.index;
