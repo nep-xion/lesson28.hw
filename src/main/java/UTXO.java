@@ -69,4 +69,6 @@ public class UTXO implements Comparable<UTXO> {
         if (in > index)
             return -1;
         else if (in < index)
-         
+            return 1;
+        else {
+           
