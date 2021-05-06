@@ -67,4 +67,6 @@ public class UTXO implements Comparable<UTXO> {
         byte[] hash = utxo.txHash;
         int in = utxo.index;
         if (in > index)
-            return 
+            return -1;
+        else if (in < index)
+         
