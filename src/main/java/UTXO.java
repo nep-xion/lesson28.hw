@@ -71,4 +71,5 @@ public class UTXO implements Comparable<UTXO> {
         else if (in < index)
             return 1;
         else {
-           
+            int len1 = txHash.length;
+            in
