@@ -77,4 +77,5 @@ public class UTXO implements Comparable<UTXO> {
                 return -1;
             else if (len2 < len1)
                 return 1;
-          
+            else {
+                for (int i = 0; i < le
