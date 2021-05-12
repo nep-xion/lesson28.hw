@@ -75,4 +75,6 @@ public class UTXO implements Comparable<UTXO> {
             int len2 = hash.length;
             if (len2 > len1)
                 return -1;
-            else if (
+            else if (len2 < len1)
+                return 1;
+          
