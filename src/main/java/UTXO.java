@@ -79,4 +79,6 @@ public class UTXO implements Comparable<UTXO> {
                 return 1;
             else {
                 for (int i = 0; i < len1; i++) {
-                    if (hash[i] > txHash[
+                    if (hash[i] > txHash[i])
+                        return -1;
+                    else 
