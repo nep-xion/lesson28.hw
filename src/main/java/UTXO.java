@@ -85,3 +85,7 @@ public class UTXO implements Comparable<UTXO> {
                         return 1;
                 }
                 return 0;
+            }
+        }
+    }
+}
