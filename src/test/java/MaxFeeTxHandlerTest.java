@@ -12,3 +12,4 @@ import java.security.NoSuchProviderException;
 import java.security.Security;
 import java.security.Signature;
 import java.security.InvalidKeyException;
+import java.security.SignatureException;
