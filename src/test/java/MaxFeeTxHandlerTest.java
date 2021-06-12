@@ -14,4 +14,7 @@ import java.security.Signature;
 import java.security.InvalidKeyException;
 import java.security.SignatureException;
 
-import org.bouncycastle.jce.provider.BouncyCast
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
+public class MaxFeeTxHandlerTest {
+    private s
