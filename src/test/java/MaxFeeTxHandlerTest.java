@@ -19,4 +19,5 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 public class MaxFeeTxHandlerTest {
     private static final int NUM_KEYS = 2;
 
-    private static P
+    private static PublicKey[] publicKeys;
+    private stat
