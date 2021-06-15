@@ -17,4 +17,6 @@ import java.security.SignatureException;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 public class MaxFeeTxHandlerTest {
-    private s
+    private static final int NUM_KEYS = 2;
+
+    private static P
