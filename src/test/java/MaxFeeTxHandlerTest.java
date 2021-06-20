@@ -20,4 +20,6 @@ public class MaxFeeTxHandlerTest {
     private static final int NUM_KEYS = 2;
 
     private static PublicKey[] publicKeys;
-    private stat
+    private static PrivateKey[] privateKeys;
+
+    @BeforeClass p
