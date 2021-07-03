@@ -22,4 +22,4 @@ public class MaxFeeTxHandlerTest {
     private static PublicKey[] publicKeys;
     private static PrivateKey[] privateKeys;
 
-    @BeforeClass p
+    @BeforeClass public static void beforeClass() throws NoSu
