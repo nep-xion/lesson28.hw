@@ -22,4 +22,4 @@ public class MaxFeeTxHandlerTest {
     private static PublicKey[] publicKeys;
     private static PrivateKey[] privateKeys;
 
-    @BeforeClass public static void beforeClass() throws NoSu
+    @BeforeClass public static void beforeClass() throws NoSuchAlgorithmException, NoSuchProviderException {
