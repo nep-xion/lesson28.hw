@@ -25,4 +25,5 @@ public class MaxFeeTxHandlerTest {
     @BeforeClass public static void beforeClass() throws NoSuchAlgorithmException, NoSuchProviderException {
         Security.addProvider(new BouncyCastleProvider());
 
-        publicKeys = new PublicKey[N
+        publicKeys = new PublicKey[NUM_KEYS];
+        privateKeys = new PrivateKey[NUM_K
