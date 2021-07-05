@@ -26,4 +26,6 @@ public class MaxFeeTxHandlerTest {
         Security.addProvider(new BouncyCastleProvider());
 
         publicKeys = new PublicKey[NUM_KEYS];
-        privateKeys = new PrivateKey[NUM_K
+        privateKeys = new PrivateKey[NUM_KEYS];
+
+        KeyPairGenerator keyGen = KeyPairGenerator.
