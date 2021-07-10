@@ -29,4 +29,6 @@ public class MaxFeeTxHandlerTest {
         privateKeys = new PrivateKey[NUM_KEYS];
 
         KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
-        SecureRandom random = SecureRando
+        SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
+
+        keyGen.initia
