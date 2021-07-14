@@ -33,4 +33,5 @@ public class MaxFeeTxHandlerTest {
 
         keyGen.initialize(512, random);
 
-        for (int i = 0; i < NU
+        for (int i = 0; i < NUM_KEYS; ++i) {
+            KeyPair pair =
