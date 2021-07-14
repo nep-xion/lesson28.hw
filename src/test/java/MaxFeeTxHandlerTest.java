@@ -35,4 +35,5 @@ public class MaxFeeTxHandlerTest {
 
         for (int i = 0; i < NUM_KEYS; ++i) {
             KeyPair pair = keyGen.generateKeyPair();
-            publicKe
+            publicKeys[i] = pair.getPublic();
+            privateKeys[i] 
