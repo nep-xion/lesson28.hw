@@ -40,4 +40,4 @@ public class MaxFeeTxHandlerTest {
         }
     }
 
-    @Test public 
+    @Test public void testIsValidTxSuccess() throws NoSuchA
