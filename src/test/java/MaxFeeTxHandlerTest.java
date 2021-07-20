@@ -40,4 +40,5 @@ public class MaxFeeTxHandlerTest {
         }
     }
 
-    @Test public void testIsValidTxSuccess() throws NoSuchAlgorithmException, InvalidKeyExcep
+    @Test public void testIsValidTxSuccess() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+        // Initial
