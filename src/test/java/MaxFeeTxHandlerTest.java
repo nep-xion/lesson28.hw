@@ -46,4 +46,5 @@ public class MaxFeeTxHandlerTest {
 
         // Create initial transaction that creates 100 coin signed by scrooge {@code publicKeys[0]}
         Transaction transaction0 = new Transaction();
-        transact
+        transaction0.addInput(null, 0);
+        transaction0.ad
