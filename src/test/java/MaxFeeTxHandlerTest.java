@@ -56,4 +56,5 @@ public class MaxFeeTxHandlerTest {
 
         MaxFeeTxHandler txHandler = new MaxFeeTxHandler(pool);
 
-        // Create transaction that gives 1 coin to address1 {@cod
+        // Create transaction that gives 1 coin to address1 {@code publicKeys[1]}
+        Transaction transactio
