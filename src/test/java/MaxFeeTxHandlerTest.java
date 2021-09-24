@@ -68,4 +68,6 @@ public class MaxFeeTxHandlerTest {
         sig.initSign(privateKeys[0]);
         sig.update(inputDataToSign);
         byte[] signatureBytes = sig.sign();
-        input.addS
+        input.addSignature(signatureBytes);
+
+        Assert.a
