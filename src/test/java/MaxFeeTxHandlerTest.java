@@ -92,4 +92,5 @@ public class MaxFeeTxHandlerTest {
         // Create transaction that gives 1 coin to address1 {@code publicKeys[1]}
         Transaction transaction = new Transaction();
         transaction.addInput("SOME_INVALID_HASH".getBytes(), 0);
-        transaction.addOutpu
+        transaction.addOutput(1.0, publicKeys[1]);
+        Transaction.Input inpu
