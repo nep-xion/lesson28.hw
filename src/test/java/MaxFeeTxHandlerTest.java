@@ -93,4 +93,6 @@ public class MaxFeeTxHandlerTest {
         Transaction transaction = new Transaction();
         transaction.addInput("SOME_INVALID_HASH".getBytes(), 0);
         transaction.addOutput(1.0, publicKeys[1]);
-        Transaction.Input inpu
+        Transaction.Input input = transaction.getInput(0);
+
+        // Address0 need
