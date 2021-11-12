@@ -97,4 +97,5 @@ public class MaxFeeTxHandlerTest {
 
         // Address0 needs to sign it so that the transaction is valid
         byte[] inputDataToSign = transaction.getRawDataToSign(0);
-        Signature sig = Signature.
+        Signature sig = Signature.getInstance("SHA256withRSA");
+        sig.init
