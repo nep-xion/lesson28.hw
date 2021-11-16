@@ -106,4 +106,4 @@ public class MaxFeeTxHandlerTest {
         Assert.assertEquals(false, txHandler.isValidTx(transaction));
     }
 
-    @Test public void testIsVal
+    @Test public void testIsValidTx_Fail_InputSignatureNotValid() throws NoSuchAlgorith
