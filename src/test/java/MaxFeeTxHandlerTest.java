@@ -111,4 +111,5 @@ public class MaxFeeTxHandlerTest {
         UTXOPool pool = new UTXOPool();
 
         // Create initial transaction that creates 100 coin signed by scrooge {@code publicKeys[0]}
-        Transacti
+        Transaction transaction0 = new Transaction();
+        t
