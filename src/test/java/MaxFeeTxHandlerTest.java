@@ -121,3 +121,5 @@ public class MaxFeeTxHandlerTest {
         pool.addUTXO(utxo, out);
 
         MaxFeeTxHandler txHandler = new MaxFeeTxHandler(pool);
+
+        // Create transaction that gives 1 coin to
