@@ -130,4 +130,4 @@ public class MaxFeeTxHandlerTest {
 
         // Address0 needs to sign it so that the transaction is valid, however
         // Address1 signs it instead of Address0
-        byte[] inpu
+        byte[] inputDataToSign = transaction.getRawDataToSign(0)
