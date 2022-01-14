@@ -140,4 +140,4 @@ public class MaxFeeTxHandlerTest {
         Assert.assertEquals(false, txHandler.isValidTx(transaction));
     }
 
-    @Test public void testIs
+    @Test public void testIsValidTx_Fail_InputSignatureIsEmpty() throws NoSuchAl
