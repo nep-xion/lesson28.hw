@@ -162,4 +162,7 @@ public class MaxFeeTxHandlerTest {
         transaction.addOutput(1.0, publicKeys[1]);
         Transaction.Input input = transaction.getInput(0);
 
-        Assert.assertEquals(false, txHandler.isValidTx(transact
+        Assert.assertEquals(false, txHandler.isValidTx(transaction));
+    }
+
+    @Test public void testIsValidTx_F
