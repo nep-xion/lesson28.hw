@@ -169,4 +169,4 @@ public class MaxFeeTxHandlerTest {
         // Initialize pool with one UTXO that belongs to address0 / scrooge {@code publicKeys[0]}
         UTXOPool pool = new UTXOPool();
 
-        // Create initial transacti
+        // Create initial transaction that creates 100 coin signed by scrooge {@code pub
