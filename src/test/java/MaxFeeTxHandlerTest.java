@@ -185,4 +185,6 @@ public class MaxFeeTxHandlerTest {
         Transaction transaction = new Transaction();
         transaction.addInput(transaction0.getHash(), 0);
         transaction.addOutput(-0.1, publicKeys[1]);
-        Transaction.Input input = transaction.getInput(0)
+        Transaction.Input input = transaction.getInput(0);
+
+        // Address0 needs to sign it so that the t
