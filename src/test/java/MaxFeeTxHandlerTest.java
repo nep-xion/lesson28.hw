@@ -199,4 +199,4 @@ public class MaxFeeTxHandlerTest {
     }
 
     @Test public void testIsValidTx_Fail_UTXOUsedMultipleTimes() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
-        // Initialize pool with one UTXO t
+        // Initialize pool with one UTXO that belongs to address0 / scrooge {@code p
