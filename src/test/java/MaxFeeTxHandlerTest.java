@@ -216,4 +216,4 @@ public class MaxFeeTxHandlerTest {
 
         // Create transaction that gives 1 coin to address1 {@code publicKeys[1]}
         Transaction transaction = new Transaction();
-        transa
+        transaction.addInput(transaction0.getHash(), 0
