@@ -222,4 +222,4 @@ public class MaxFeeTxHandlerTest {
         Transaction.Input input1 = transaction.getInput(0);
         Transaction.Input input2 = transaction.getInput(1);
 
-        // A
+        // Address0 needs to sign it so that the transa
