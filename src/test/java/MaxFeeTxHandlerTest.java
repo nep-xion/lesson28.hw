@@ -223,4 +223,5 @@ public class MaxFeeTxHandlerTest {
         Transaction.Input input2 = transaction.getInput(1);
 
         // Address0 needs to sign it so that the transaction is valid
-        byte[] inputDat
+        byte[] inputDataToSign1 = transaction.getRawDataToSign(0);
+        Si
