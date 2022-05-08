@@ -230,4 +230,5 @@ public class MaxFeeTxHandlerTest {
         byte[] signatureBytes1 = sig1.sign();
         input1.addSignature(signatureBytes1);
 
-        byte[] inputDataToSign2 = tra
+        byte[] inputDataToSign2 = transaction.getRawDataToSign(1);
+        Signature si
