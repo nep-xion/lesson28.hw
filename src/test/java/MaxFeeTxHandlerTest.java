@@ -240,4 +240,4 @@ public class MaxFeeTxHandlerTest {
         Assert.assertEquals(false, txHandler.isValidTx(transaction));
     }
 
-    @Test public void tes
+    @Test public void testIsValidTx_Fail_OutputValuesExceedsInputs() throws
