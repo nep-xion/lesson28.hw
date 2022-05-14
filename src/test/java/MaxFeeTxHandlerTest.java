@@ -241,4 +241,4 @@ public class MaxFeeTxHandlerTest {
     }
 
     @Test public void testIsValidTx_Fail_OutputValuesExceedsInputs() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
-        // Initialize pool w
+        // Initialize pool with one UTXO that belongs to address0 /
