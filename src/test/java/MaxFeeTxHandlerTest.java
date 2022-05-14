@@ -240,4 +240,5 @@ public class MaxFeeTxHandlerTest {
         Assert.assertEquals(false, txHandler.isValidTx(transaction));
     }
 
-    @Test public void testIsValidTx_Fail_OutputValuesExceedsInputs() throws NoSuchAlgorithmException, InvalidKeyException, Sig
+    @Test public void testIsValidTx_Fail_OutputValuesExceedsInputs() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+        // Initialize pool w
