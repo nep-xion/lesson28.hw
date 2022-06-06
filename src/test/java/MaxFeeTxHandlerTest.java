@@ -260,4 +260,5 @@ public class MaxFeeTxHandlerTest {
         Transaction transaction = new Transaction();
         transaction.addInput(transaction0.getHash(), 0);
         transaction.addOutput(50.0, publicKeys[1]);
-        transactio
+        transaction.addOutput(70.0, publicKeys[1]);
+  
