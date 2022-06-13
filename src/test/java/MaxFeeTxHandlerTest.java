@@ -271,4 +271,7 @@ public class MaxFeeTxHandlerTest {
         byte[] signatureBytes1 = sig1.sign();
         input1.addSignature(signatureBytes1);
 
-        Assert.assertEquals(false, txHandler.isValidTx(transac
+        Assert.assertEquals(false, txHandler.isValidTx(transaction));
+    }
+
+    @Test public void testHandleTx
