@@ -274,4 +274,4 @@ public class MaxFeeTxHandlerTest {
         Assert.assertEquals(false, txHandler.isValidTx(transaction));
     }
 
-    @Test public void testHandleTx
+    @Test public void testHandleTxs_Success() throws NoSuchAlgorithmE
