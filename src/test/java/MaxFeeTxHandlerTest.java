@@ -275,4 +275,4 @@ public class MaxFeeTxHandlerTest {
     }
 
     @Test public void testHandleTxs_Success() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
-        // Initialize poo
+        // Initialize pool with one UTXO that belongs to address
