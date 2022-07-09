@@ -304,4 +304,5 @@ public class MaxFeeTxHandlerTest {
         byte[] signatureBytes1 = sig1.sign();
         input1.addSignature(signatureBytes1);
 
-        Transaction[] txs = new 
+        Transaction[] txs = new Transaction[1];
+        txs[0] = trans
