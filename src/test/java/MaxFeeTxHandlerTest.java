@@ -305,4 +305,6 @@ public class MaxFeeTxHandlerTest {
         input1.addSignature(signatureBytes1);
 
         Transaction[] txs = new Transaction[1];
-        txs[0] = trans
+        txs[0] = transaction;
+
+        Assert.assertArrayEquals(tx
