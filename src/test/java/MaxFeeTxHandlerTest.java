@@ -310,4 +310,4 @@ public class MaxFeeTxHandlerTest {
         Assert.assertArrayEquals(txs, txHandler.handleTxs(txs));
     }
 
-    @Test public void testHandleTxs_DoubleSpending() throw
+    @Test public void testHandleTxs_DoubleSpending() throws NoSuchAlgorithmException, Inva
