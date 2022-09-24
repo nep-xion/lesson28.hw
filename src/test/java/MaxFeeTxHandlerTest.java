@@ -326,4 +326,4 @@ public class MaxFeeTxHandlerTest {
 
         MaxFeeTxHandler txHandler = new MaxFeeTxHandler(pool);
 
-       
+        // Create transaction that gives 1 coin t
