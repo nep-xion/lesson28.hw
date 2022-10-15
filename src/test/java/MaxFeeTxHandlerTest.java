@@ -343,4 +343,7 @@ public class MaxFeeTxHandlerTest {
         Transaction[] txs = new Transaction[1];
         txs[0] = transaction;
 
-        Assert.assertArrayEquals(txs, txHandler.handleTx
+        Assert.assertArrayEquals(txs, txHandler.handleTxs(txs));
+
+
+        Transaction transaction2 = new Tr
