@@ -355,4 +355,5 @@ public class MaxFeeTxHandlerTest {
         byte[] t2inputDataToSign = transaction2.getRawDataToSign(0);
         Signature t2Sig = Signature.getInstance("SHA256withRSA");
         t2Sig.initSign(privateKeys[0]);
-   
+        t2Sig.update(inputDataToSign1);
+        by
