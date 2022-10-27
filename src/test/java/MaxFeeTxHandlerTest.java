@@ -365,4 +365,4 @@ public class MaxFeeTxHandlerTest {
         Assert.assertArrayEquals(new Transaction[0], txHandler.handleTxs(txs2));
     }
 
-  
+    @Test public void testHandleTxs_MaxFee() {
