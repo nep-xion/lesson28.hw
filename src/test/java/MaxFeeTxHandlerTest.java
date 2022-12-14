@@ -379,4 +379,5 @@ public class MaxFeeTxHandlerTest {
         transaction0.finalize();
 
         UTXO utxo1 = new UTXO(transaction0.getHash(), 0);
-        UTXO utxo2 = new
+        UTXO utxo2 = new UTXO(transaction0.getHash(), 1);
+    
