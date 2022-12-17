@@ -383,4 +383,6 @@ public class MaxFeeTxHandlerTest {
         pool.addUTXO(utxo1, out1);
         pool.addUTXO(utxo2, out2);
 
-        MaxFeeTxHandler txHandler = new
+        MaxFeeTxHandler txHandler = new MaxFeeTxHandler(pool);
+
+        // Creat
