@@ -385,4 +385,5 @@ public class MaxFeeTxHandlerTest {
 
         MaxFeeTxHandler txHandler = new MaxFeeTxHandler(pool);
 
-        // Create 3 transactions with the following fee: 8 (t1), 5
+        // Create 3 transactions with the following fee: 8 (t1), 5 (t2), 14 (t3)
+        // t1 and t3 conf
