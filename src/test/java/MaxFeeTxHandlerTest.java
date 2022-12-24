@@ -389,4 +389,5 @@ public class MaxFeeTxHandlerTest {
         // t1 and t3 conflict so the maximum fee should be t2 + t3 = 19
         // Create transaction that gives 1 coin to address1 {@code publicKeys[1]}
         Transaction t1 = new Transaction();
-        
+        t1.addInput(transaction0.getHash(), 0);
+    
