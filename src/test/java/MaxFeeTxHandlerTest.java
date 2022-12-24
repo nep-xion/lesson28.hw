@@ -386,4 +386,5 @@ public class MaxFeeTxHandlerTest {
         MaxFeeTxHandler txHandler = new MaxFeeTxHandler(pool);
 
         // Create 3 transactions with the following fee: 8 (t1), 5 (t2), 14 (t3)
-        // t1 and t3 conflict so the maximum fee should be t
+        // t1 and t3 conflict so the maximum fee should be t2 + t3 = 19
+        // Create transaction that 
