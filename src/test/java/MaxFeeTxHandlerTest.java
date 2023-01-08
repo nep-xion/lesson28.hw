@@ -396,4 +396,5 @@ public class MaxFeeTxHandlerTest {
         signInput(t1input, t1inputData, privateKeys[0]);
 
         Transaction t2 = new Transaction();
-  
+        t2.addInput(transaction0.getHash(), 1);
+   
