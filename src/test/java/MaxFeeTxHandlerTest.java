@@ -402,3 +402,4 @@ public class MaxFeeTxHandlerTest {
         byte[] t2inputData = t2.getRawDataToSign(0);
         signInput(t2input, t2inputData, privateKeys[0]);
 
+        Transaction t3 = new Transaction();
