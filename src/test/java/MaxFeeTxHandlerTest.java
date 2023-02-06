@@ -407,4 +407,4 @@ public class MaxFeeTxHandlerTest {
         t3.addOutput(86.0, publicKeys[1]);
         Transaction.Input t3input = t3.getInput(0);
         byte[] t3inputData = t3.getRawDataToSign(0);
-    
+        signInput(t3input, t3inputData, privat
