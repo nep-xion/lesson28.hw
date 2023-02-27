@@ -414,4 +414,6 @@ public class MaxFeeTxHandlerTest {
         txs[1] = t2;
         txs[2] = t3;
 
-        Transaction[] etxs = ne
+        Transaction[] etxs = new Transaction[2];
+        etxs[0] = t3;
+        etxs[
