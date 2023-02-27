@@ -418,4 +418,8 @@ public class MaxFeeTxHandlerTest {
         etxs[0] = t3;
         etxs[1] = t2;
 
-        Assert.assertArrayEquals(
+        Assert.assertArrayEquals(etxs, txHandler.handleTxs(txs));
+    }
+
+
+    private void
