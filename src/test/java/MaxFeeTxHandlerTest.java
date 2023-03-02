@@ -422,4 +422,5 @@ public class MaxFeeTxHandlerTest {
     }
 
 
-    private void signInput(Transaction.Input input, byte[] rawData, Pr
+    private void signInput(Transaction.Input input, byte[] rawData, PrivateKey privKey) {
+        Signature sig = nu
