@@ -422,4 +422,4 @@ public class MaxFeeTxHandlerTest {
     }
 
 
-    private void
+    private void signInput(Transaction.Input input, byte[] rawData, Pr
