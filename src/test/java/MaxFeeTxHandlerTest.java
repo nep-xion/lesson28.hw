@@ -427,4 +427,4 @@ public class MaxFeeTxHandlerTest {
         byte[] signatureBytes = null;
 
         try {
-            sig 
+            sig = Signature.getInstance("SHA256withRSA"
