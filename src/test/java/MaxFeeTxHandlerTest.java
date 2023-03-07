@@ -428,4 +428,7 @@ public class MaxFeeTxHandlerTest {
 
         try {
             sig = Signature.getInstance("SHA256withRSA");
-        } catch (NoSuchAlgorithmException e) 
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        try {
