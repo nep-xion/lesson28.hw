@@ -432,3 +432,5 @@ public class MaxFeeTxHandlerTest {
             e.printStackTrace();
         }
         try {
+            sig.initSign(privKey);
+        } cat
