@@ -433,4 +433,5 @@ public class MaxFeeTxHandlerTest {
         }
         try {
             sig.initSign(privKey);
-        } cat
+        } catch (InvalidKeyException e) {
+            e.printSta
