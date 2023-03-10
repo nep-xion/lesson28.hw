@@ -437,4 +437,5 @@ public class MaxFeeTxHandlerTest {
             e.printStackTrace();
         }
         try {
-            s
+            sig.update(rawData);
+            signatureBytes = sig.
