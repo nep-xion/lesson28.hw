@@ -438,4 +438,5 @@ public class MaxFeeTxHandlerTest {
         }
         try {
             sig.update(rawData);
-            signatureBytes = sig.
+            signatureBytes = sig.sign();
+        } catch (SignatureException e) {
