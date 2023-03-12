@@ -441,4 +441,5 @@ public class MaxFeeTxHandlerTest {
             signatureBytes = sig.sign();
         } catch (SignatureException e) {
             e.printStackTrace();
-  
+        }
+        input.addSignature(s
