@@ -179,3 +179,46 @@ public class TxHandlerTest {
 
         UTXO utxo = new UTXO(transaction0.getHash(), 0);
         pool.addUTXO(utxo, out);
+
+        TxHandler txHandler = new TxHandler(pool);
+
+        // Create transaction that gives 1 coin to address1 {@code publicKeys[1]}
+        Transaction transaction = new Transaction();
+        transaction.addInput(transaction0.getHash(), 0);
+        transaction.addOutput(-0.1, publicKeys[1]);
+        Transaction.Input input = transaction.getInput(0);
+
+        // Address0 needs to sign it so that the transaction is valid
+        byte[] inputDataToSign = transaction.getRawDataToSign(0);
+        Signature sig = Signature.getInstance("SHA256withRSA");
+        sig.initSign(privateKeys[0]);
+        sig.update(inputDataToSign);
+        byte[] signatureBytes = sig.sign();
+        input.addSignature(signatureBytes);
+
+        Assert.assertEquals(false, txHandler.isValidTx(transaction));
+    }
+
+    @Test public void testIsValidTx_Fail_UTXOUsedMultipleTimes() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+        // Initialize pool with one UTXO that belongs to address0 / scrooge {@code publicKeys[0]}
+        UTXOPool pool = new UTXOPool();
+
+        // Create initial transaction that creates 100 coin signed by scrooge {@code publicKeys[0]}
+        Transaction transaction0 = new Transaction();
+        transaction0.addInput(null, 0);
+        transaction0.addOutput(100.0, publicKeys[0]);
+        Transaction.Output out = transaction0.getOutput(0);
+        transaction0.finalize();
+
+        UTXO utxo = new UTXO(transaction0.getHash(), 0);
+        pool.addUTXO(utxo, out);
+
+        TxHandler txHandler = new TxHandler(pool);
+
+        // Create transaction that gives 1 coin to address1 {@code publicKeys[1]}
+        Transaction transaction = new Transaction();
+        transaction.addInput(transaction0.getHash(), 0);
+        transaction.addInput(transaction0.getHash(), 0);
+        transaction.addOutput(1.0, publicKeys[1]);
+        Transaction.Input input1 = transaction.getInput(0);
+        Transaction.Input input2 = transaction.getInput(1);
