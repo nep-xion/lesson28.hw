@@ -346,3 +346,45 @@ public class TxHandlerTest {
         t2.addOutput(95.0, publicKeys[1]);
         Transaction.Input t2input = t2.getInput(0);
         byte[] t2inputData = t2.getRawDataToSign(0);
+        signInput(t2input, t2inputData, privateKeys[0]);
+
+        Transaction t3 = new Transaction();
+        t3.addInput(transaction0.getHash(), 0);
+        t3.addOutput(86.0, publicKeys[1]);
+        Transaction.Input t3input = t3.getInput(0);
+        byte[] t3inputData = t3.getRawDataToSign(0);
+        signInput(t3input, t3inputData, privateKeys[0]);
+
+        Transaction[] txs = new Transaction[3];
+        txs[0] = t1;
+        txs[1] = t2;
+        txs[2] = t3;
+
+        Transaction[] etxs = new Transaction[2];
+        etxs[0] = t1;
+        etxs[1] = t2;
+
+        Assert.assertArrayEquals(etxs, txHandler.handleTxs(txs));
+    }
+
+    @Test public void testHandleTxs_DoubleSpending() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+        // Initialize pool with one UTXO that belongs to address0 / scrooge {@code publicKeys[0]}
+        UTXOPool pool = new UTXOPool();
+
+        // Create initial transaction that creates 100 coin signed by scrooge {@code publicKeys[0]}
+        Transaction transaction0 = new Transaction();
+        transaction0.addInput(null, 0);
+        transaction0.addOutput(100.0, publicKeys[0]);
+        Transaction.Output out = transaction0.getOutput(0);
+        transaction0.finalize();
+
+        UTXO utxo = new UTXO(transaction0.getHash(), 0);
+        pool.addUTXO(utxo, out);
+
+        TxHandler txHandler = new TxHandler(pool);
+
+        // Create transaction that gives 1 coin to address1 {@code publicKeys[1]}
+        Transaction transaction = new Transaction();
+        transaction.addInput(transaction0.getHash(), 0);
+        transaction.addOutput(100.0, publicKeys[1]);
+        Transaction.Input input1 = transaction.getInput(0);
