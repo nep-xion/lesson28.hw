@@ -285,3 +285,64 @@ public class TxHandlerTest {
         transaction0.addOutput(100.0, publicKeys[0]);
         Transaction.Output out = transaction0.getOutput(0);
         transaction0.finalize();
+
+        UTXO utxo = new UTXO(transaction0.getHash(), 0);
+        pool.addUTXO(utxo, out);
+
+        TxHandler txHandler = new TxHandler(pool);
+
+        // Create transaction that gives 1 coin to address1 {@code publicKeys[1]}
+        Transaction transaction = new Transaction();
+        transaction.addInput(transaction0.getHash(), 0);
+        transaction.addOutput(100.0, publicKeys[1]);
+        Transaction.Input input1 = transaction.getInput(0);
+
+        // Address0 needs to sign it so that the transaction is valid
+        byte[] inputDataToSign1 = transaction.getRawDataToSign(0);
+        Signature sig1 = Signature.getInstance("SHA256withRSA");
+        sig1.initSign(privateKeys[0]);
+        sig1.update(inputDataToSign1);
+        byte[] signatureBytes1 = sig1.sign();
+        input1.addSignature(signatureBytes1);
+
+        Transaction[] txs = new Transaction[1];
+        txs[0] = transaction;
+
+        Assert.assertArrayEquals(txs, txHandler.handleTxs(txs));
+    }
+
+    @Test public void testHandleTxs_SuccessMultiple() {
+        // Initialize pool with one UTXO that belongs to address0 / scrooge {@code publicKeys[0]}
+        UTXOPool pool = new UTXOPool();
+
+        // Create initial transaction that creates 100 coin signed by scrooge {@code publicKeys[0]}
+        Transaction transaction0 = new Transaction();
+        transaction0.addInput(null, 0);
+        transaction0.addOutput(100.0, publicKeys[0]);
+        transaction0.addOutput(100.0, publicKeys[0]);
+        Transaction.Output out1 = transaction0.getOutput(0);
+        Transaction.Output out2 = transaction0.getOutput(1);
+        transaction0.finalize();
+
+        UTXO utxo1 = new UTXO(transaction0.getHash(), 0);
+        UTXO utxo2 = new UTXO(transaction0.getHash(), 1);
+        pool.addUTXO(utxo1, out1);
+        pool.addUTXO(utxo2, out2);
+
+        TxHandler txHandler = new TxHandler(pool);
+
+        // Create 3 transactions with the following fee: 8 (t1), 5 (t2), 14 (t3)
+        // t1 and t3 conflict so it should return t1 and t2 as the accepted transactions
+        // Create transaction that gives 1 coin to address1 {@code publicKeys[1]}
+        Transaction t1 = new Transaction();
+        t1.addInput(transaction0.getHash(), 0);
+        t1.addOutput(92.0, publicKeys[1]);
+        Transaction.Input t1input = t1.getInput(0);
+        byte[] t1inputData = t1.getRawDataToSign(0);
+        signInput(t1input, t1inputData, privateKeys[0]);
+
+        Transaction t2 = new Transaction();
+        t2.addInput(transaction0.getHash(), 1);
+        t2.addOutput(95.0, publicKeys[1]);
+        Transaction.Input t2input = t2.getInput(0);
+        byte[] t2inputData = t2.getRawDataToSign(0);
