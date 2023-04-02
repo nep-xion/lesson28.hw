@@ -388,3 +388,61 @@ public class TxHandlerTest {
         transaction.addInput(transaction0.getHash(), 0);
         transaction.addOutput(100.0, publicKeys[1]);
         Transaction.Input input1 = transaction.getInput(0);
+
+        // Address0 needs to sign it so that the transaction is valid
+        byte[] inputDataToSign1 = transaction.getRawDataToSign(0);
+        Signature sig1 = Signature.getInstance("SHA256withRSA");
+        sig1.initSign(privateKeys[0]);
+        sig1.update(inputDataToSign1);
+        byte[] signatureBytes1 = sig1.sign();
+        input1.addSignature(signatureBytes1);
+
+        Transaction[] txs = new Transaction[1];
+        txs[0] = transaction;
+
+        Assert.assertArrayEquals(txs, txHandler.handleTxs(txs));
+
+
+        Transaction transaction2 = new Transaction();
+        transaction2.addInput(transaction0.getHash(), 0);
+        transaction2.addOutput(100.0, publicKeys[1]);
+        Transaction.Input t2input = transaction2.getInput(0);
+
+        // Address0 needs to sign it so that the transaction is valid
+        byte[] t2inputDataToSign = transaction2.getRawDataToSign(0);
+        Signature t2Sig = Signature.getInstance("SHA256withRSA");
+        t2Sig.initSign(privateKeys[0]);
+        t2Sig.update(inputDataToSign1);
+        byte[] t2SignatureBytes = t2Sig.sign();
+        t2input.addSignature(t2SignatureBytes);
+
+        Transaction[] txs2 = new Transaction[1];
+        txs2[0] = transaction;
+
+        Assert.assertArrayEquals(new Transaction[0], txHandler.handleTxs(txs2));
+    }
+
+
+    private void signInput(Transaction.Input input, byte[] rawData, PrivateKey privKey) {
+        Signature sig = null;
+        byte[] signatureBytes = null;
+
+        try {
+            sig = Signature.getInstance("SHA256withRSA");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        try {
+            sig.initSign(privKey);
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        }
+        try {
+            sig.update(rawData);
+            signatureBytes = sig.sign();
+        } catch (SignatureException e) {
+            e.printStackTrace();
+        }
+        input.addSignature(signatureBytes);
+    }
+}
